@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  S3BucketUrl:
+    Type: String
+    Description: Base URL for cloudformation template resources.
+Resources:
+  Cognito:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: !Sub ${S3BucketUrl}/Cognito.yml
+      Parameters:
+        AuthName: F1
+  
