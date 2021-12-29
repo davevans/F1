@@ -1,18 +1,10 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './Components/Login'
-import Register from './Components/Register'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import App from './Components/App'
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-    </Routes>
-  </BrowserRouter>,
+  <App />,
   document.getElementById('root')
 );
 
