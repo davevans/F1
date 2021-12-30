@@ -43,10 +43,6 @@ Resources:
         ExternalId: !Sub ${AuthName}-external
         SnsCallerArn: !GetAtt SNSRole.Arn
       Schema:
-        - Name: name
-          AttributeDataType: String
-          Mutable: true
-          Required: true
         - Name: email
           AttributeDataType: String
           Mutable: false

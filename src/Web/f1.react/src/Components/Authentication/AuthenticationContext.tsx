@@ -7,3 +7,8 @@ export interface IAuthenticationContext {
 }
   
 export const AuthenticationContext = React.createContext<IAuthenticationContext | null>(null);
+
+/*
+    TODO: need to add
+    * First Name, LastName, AccessToken
+ */
