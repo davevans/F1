@@ -10,6 +10,7 @@ export interface IAuthenticationContext {
     isAuthenticated: boolean;
     login:(request: ILoginRequest) => Promise<CognitoUserSession>;
     logout:() => Promise<void>;
+    getSession: () => Promise<CognitoUserSession>;
 }
   
 export const AuthenticationContext = React.createContext<IAuthenticationContext | null>(null);

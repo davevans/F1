@@ -1,26 +1,29 @@
 import { useContext, useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthenticationContext } from './AuthenticationContext';
 
 const Login = () => {
-
+    let navigate = useNavigate();
     const authenticationContext = useContext(AuthenticationContext);
-
-    const [email, setEmail] = useState("dav@dav-evans.com");
-    const [password, setPassword] = useState("1Mlm7sNaS2kW=z7rfB#");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const onClick = async (event: any) => {
         event.preventDefault();
-        await authenticationContext?.login({ username: email, password});
-        console.log('logged in.');
+        authenticationContext?.login({ username: email, password})
+            .then(_ => {
+                console.log('logged in.');
+                navigate("/");
+            })
+            .catch(err => {
+                console.log('loggin failed');
+            })
     }
 
     return (
         <div>
             <h1>Login</h1>
             <div>
-                User is {authenticationContext?.isAuthenticated ? "logged in" : "not logged in"}
-
                 <form>
                     <label>
                         Email:

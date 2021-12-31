@@ -4,9 +4,9 @@ import UserPool from './UserPool'
 
 const Register = () => {
 
-    const [email, setEmail] = useState("dav@dav-evans.com");
-    const [password, setPassword] = useState("1Mlm7sNaS2kW=z7rfB#");
-    const [phone, setPhone] = useState("+610404583336");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phone, setPhone] = useState("");
   
     const onSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
